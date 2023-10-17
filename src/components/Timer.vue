@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, computed, Ref } from 'vue';
+import { ref, Ref } from 'vue';
 
-const timeContainer: Ref<object> = ref({});
+const timeContainer: Ref<any> = ref({});
 const minutesSet: Ref<number> = ref(25);
 const minutes: Ref<number> = ref(25);
 const seconds: Ref<number> = ref(0);
@@ -11,7 +11,7 @@ const timerName: Ref<string> = ref('');
 const notes: Ref<string> = ref('');
 
 function formatTime(val: number): string {
-  return val < 10 ? `0${val}` : val;
+  return val < 10 ? `0${val}` : `${val}`;
 }
 
 function startTimer() {
